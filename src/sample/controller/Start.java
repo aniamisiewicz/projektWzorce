@@ -14,4 +14,5 @@ public class Start extends AppController {
     public void goToMenu(ActionEvent actionEvent) {
         goTo.execute(actionEvent, "../view/menu.fxml");
     }
+
 }

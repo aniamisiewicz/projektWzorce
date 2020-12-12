@@ -7,19 +7,19 @@ public class QuestionsIterator implements IIterator {
 
     public QuestionsIterator(Questions questions) {
         this.questions = questions;
-        currentPosition = 0;
+        currentPosition = -1;
     }
 
     @Override
     public Question next() {
         if (hasNext()) {
-            return questions.getQuestionsList().get(currentPosition++);
+            return questions.getQuestionsList().get(++currentPosition);
         }
         return null;
     }
 
     @Override
     public boolean hasNext() {
-        return currentPosition < questions.getQuestionsList().size();
+        return currentPosition < questions.getQuestionsList().size() - 1;
     }
 }

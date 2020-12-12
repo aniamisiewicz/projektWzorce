@@ -4,6 +4,7 @@ public class QuestionWithInput extends Question {
 
     public String input;
     public String correctAnswer;
+    public String userAnswer;
 
     public QuestionWithInput() {}
 

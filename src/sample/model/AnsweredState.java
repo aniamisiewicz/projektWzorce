@@ -1,5 +1,7 @@
 package sample.model;
 
+import javafx.scene.control.Label;
+
 public class AnsweredState extends State {
 
     public AnsweredState(Question question) {
@@ -7,12 +9,12 @@ public class AnsweredState extends State {
     }
 
     @Override
-    void clickAnswer() {
-        System.out.println("NIE MOZNA JUZ ODPOWIEDZIEC");
+    public void clickAnswer(Label label) {
+        label.setText("Nie możesz odpowiedzieć ponownie.");
     }
 
     @Override
-    void clickNext() {
-        //przejscie do kolejnego okna
+    public void clickNext(Label label) {
+        label.setText("");
     }
 }

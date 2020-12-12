@@ -21,4 +21,5 @@ public class Menu extends AppController {
         createInputQuestions();
         goTo.execute(actionEvent, "../view/input.fxml");
     }
+
 }

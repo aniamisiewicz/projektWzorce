@@ -1,10 +1,12 @@
 package sample.model;
 
+import javafx.scene.control.Label;
+
 public abstract class Question implements IQuestion {
 
     private int id;
     private String content;
-    private State state;
+    public State state;
 
     /*public Question(int id, String content, List<String> answers, int correctAnswer) {
         this.id = id;
@@ -44,12 +46,12 @@ public abstract class Question implements IQuestion {
         this.state = state;
     }
 
-    public void clickAnswer() {
-        state.clickAnswer();
+    public void clickAnswer(Label label) {
+        state.clickAnswer(label);
     }
 
-    public void clickNext() {
-        state.clickNext();
+    public void clickNext(Label label) {
+        state.clickNext(label);
     }
 
     public int calculatePoints() {
