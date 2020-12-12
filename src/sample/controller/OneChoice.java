@@ -1,9 +1,11 @@
 package sample.controller;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 import sample.model.*;
+
 
 import java.net.URL;
 import java.util.*;
@@ -21,17 +23,17 @@ public class OneChoice extends AppController {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setRadioButton();
+        updateQuestion();
         displayQuestion();
     }
 
     private void updateQuestion() {
         currentQuestion = (QuestionWithOneChoice) iterator.next();
-        currentQuestion.shuffle();
         alert.setText("");
     }
 
     public void displayQuestion(){
-        updateQuestion();
+        currentQuestion.shuffle();
         question.setText(currentQuestion.getContent());
         answer0.setText(currentQuestion.answers.get(0));
         answer1.setText(currentQuestion.answers.get(1));
@@ -92,16 +94,19 @@ public class OneChoice extends AppController {
         }
     }
 
-    public void nextQuestion(){
+    public void nextQuestion(ActionEvent actionEvent){
         if(currentQuestion.state instanceof AnsweredState){
             currentQuestion.clickNext(alert);
-            displayQuestion();
+            updateQuestion();
+            if(currentQuestion != null){
+                displayQuestion();
+            }
+            else{
+                goTo.execute(actionEvent, "../view/End.fxml");
+            }
         }
         else{
             currentQuestion.clickNext(alert);
         }
     }
-
-
-
 }

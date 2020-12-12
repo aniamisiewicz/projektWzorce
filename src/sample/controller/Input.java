@@ -1,8 +1,10 @@
 package sample.controller;
 
+import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import sample.model.*;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,6 +18,7 @@ public class Input extends AppController {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        updateQuestion();
         displayQuestion();
     }
 
@@ -26,7 +29,6 @@ public class Input extends AppController {
 
     public void displayQuestion(){
         setInputField();
-        updateQuestion();
         question.setText(currentQuestion.getContent());
     }
 
@@ -64,10 +66,16 @@ public class Input extends AppController {
         inputField.setText("");
     }
 
-    public void nextQuestion(){
+    public void nextQuestion(ActionEvent actionEvent){
         if(currentQuestion.state instanceof AnsweredState){
             currentQuestion.clickNext(alert);
-            displayQuestion();
+            updateQuestion();
+            if(currentQuestion != null){
+                displayQuestion();
+            }
+            else{
+                goTo.execute(actionEvent, "../view/End.fxml");
+            }
         }
         else{
             currentQuestion.clickNext(alert);
