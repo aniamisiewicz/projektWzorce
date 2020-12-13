@@ -3,8 +3,6 @@ package sample.model;
 public class QuestionWithInput extends Question {
 
     public String input;
-    public String correctAnswer;
-    public String userAnswer;
 
     public QuestionWithInput() {}
 
@@ -16,8 +14,11 @@ public class QuestionWithInput extends Question {
         }
     }
 
+
     @Override
     public Question clone() {
         return new QuestionWithInput(this);
     }
+
+
 }

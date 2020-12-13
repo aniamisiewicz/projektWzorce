@@ -27,4 +27,9 @@ public class Questions {
         return new QuestionsIterator(this);
     }
 
+    public void clear(){
+        questionsList.clear();
+    }
+
+
 }

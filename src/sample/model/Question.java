@@ -7,6 +7,8 @@ public abstract class Question implements IQuestion {
     private int id;
     private String content;
     public State state;
+    public String correctAnswer;
+    public String userAnswer;
 
     /*public Question(int id, String content, List<String> answers, int correctAnswer) {
         this.id = id;
@@ -23,7 +25,21 @@ public abstract class Question implements IQuestion {
             id = question.id;
             content = question.content;
             state = question.state;
+            correctAnswer = question.correctAnswer;
+            userAnswer = question.userAnswer;
         }
+    }
+
+    public String getCorrectAnswer() {
+        return correctAnswer;
+    }
+
+    public boolean isCorrect(){
+        return userAnswer == correctAnswer;
+    }
+
+    public String getUserAnswer() {
+        return userAnswer;
     }
 
     public void setId(int id) {
@@ -59,5 +75,6 @@ public abstract class Question implements IQuestion {
     }
 
     public abstract Question clone();
+
 
 }

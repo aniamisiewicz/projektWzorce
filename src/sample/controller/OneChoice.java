@@ -56,7 +56,7 @@ public class OneChoice extends AppController {
     public void answerQuestion(){
         if(AnyAnswerIsSelected()){
             if(currentQuestion.state instanceof NonAnsweredState) {
-               currentQuestion.clickAnswer(alert);
+                currentQuestion.clickAnswer(alert);
                 setSelectedAnswer();
                 checkAnswer();
             }
@@ -75,21 +75,21 @@ public class OneChoice extends AppController {
 
     private void setSelectedAnswer(){
         if(answer0.isSelected()){
-            currentQuestion.userAnswer = 0;
+            currentQuestion.userAnswer = answer0.getText();
         }
         else if(answer1.isSelected()){
-            currentQuestion.userAnswer = 1;
+            currentQuestion.userAnswer = answer1.getText();
         }
         else if(answer2.isSelected()){
-            currentQuestion.userAnswer = 2;
+            currentQuestion.userAnswer = answer2.getText();
         }
         else{
-            currentQuestion.userAnswer = 3;
+            currentQuestion.userAnswer = answer3.getText();
         }
     }
 
     private void checkAnswer(){
-        if(currentQuestion.userAnswer == currentQuestion.correctAnswer){
+        if(currentQuestion.userAnswer.equals(currentQuestion.correctAnswer)){
             User.getINSTANCE().addPoints(currentQuestion.calculatePoints());
         }
     }
