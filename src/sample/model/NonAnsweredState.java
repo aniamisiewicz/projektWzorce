@@ -3,6 +3,10 @@ package sample.model;
 
 import javafx.scene.control.Label;
 
+/*
+NonAnsweredState class represents design pattern: STATE.
+ */
+
 public class NonAnsweredState extends State {
 
     public NonAnsweredState(Question question) {
@@ -17,6 +21,6 @@ public class NonAnsweredState extends State {
 
     @Override
     public void clickNext(Label label) {
-        label.setText("Musisz najpierw odpowiedzieć.");
+        label.setText("You have to answer the question first.");
     }
 }

@@ -1,5 +1,9 @@
 package sample.model;
 
+/*
+QuestionsIterator class represents design pattern: ITERATOR.
+ */
+
 public class QuestionsIterator implements IIterator {
 
     private final Questions questions;

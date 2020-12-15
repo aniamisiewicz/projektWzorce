@@ -5,11 +5,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import sample.model.IIterator;
 import sample.model.Question;
-import sample.model.QuestionWithOneChoice;
 
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
 
 public class QuestionSummary extends AppController{
     public Label question;
@@ -29,6 +29,11 @@ public class QuestionSummary extends AppController{
     private void updateQuestion() {
         currentQuestion = iterator.next();
     }
+
+    /*
+    DisplayQuestion method represents design pattern: FACTORY.
+    */
+
 
     public void displayQuestion(){  // factory
         if(currentQuestion.isCorrect()){

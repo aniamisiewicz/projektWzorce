@@ -14,11 +14,14 @@ public class End extends AppController{
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        if((double)questions.correctAnswerAmount > (0.7 * (double)questions.getQuestionsList().size())){
+            User.getINSTANCE().notifyObservers();
+        }
         displayScore();
     }
 
     public void displayScore(){
-        score.setText("Zdobyłeś " + User.getINSTANCE().getScore() + " punktów!");
+        score.setText("You collected " + User.getINSTANCE().getScore() + " points!");
     }
 
     public void goToQuestionSummary(ActionEvent actionEvent){

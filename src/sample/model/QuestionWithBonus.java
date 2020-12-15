@@ -1,5 +1,9 @@
 package sample.model;
 
+/*
+QuestionWithBonus class represents design pattern: DECORATOR.
+ */
+
 public class QuestionWithBonus extends QuestionDecorator {
 
     public QuestionWithBonus(Question question) {

@@ -20,6 +20,7 @@ public class OneChoice extends AppController {
     private QuestionWithOneChoice currentQuestion;
     private final IIterator iterator = questions.createIterator();
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setRadioButton();
@@ -65,7 +66,7 @@ public class OneChoice extends AppController {
             }
         }
         else{
-            alert.setText("Musisz odpowiedzieć najpierw.");
+            alert.setText("You have to answer the question first.");
         }
     }
 
@@ -91,6 +92,7 @@ public class OneChoice extends AppController {
     private void checkAnswer(){
         if(currentQuestion.userAnswer.equals(currentQuestion.correctAnswer)){
             User.getINSTANCE().addPoints(currentQuestion.calculatePoints());
+            questions.correctAnswerAmount++;
         }
     }
 

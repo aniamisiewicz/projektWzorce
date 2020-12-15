@@ -6,6 +6,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/*
+Implementing IInitializable (overriding initialize method) and extending AppController by other classes in
+controller package represent design pattern: TEMPLATE METHOD.
+ */
 
 public abstract class AppController implements IInitializable {
 
@@ -14,6 +18,8 @@ public abstract class AppController implements IInitializable {
 
     public void createOneChoiceQuestions() {
         questions.clear();
+        questions.correctAnswerAmount = 0;
+        User.getINSTANCE().clearPoints();
         List<Question> temp = new ArrayList<>();
         QuestionWithOneChoice withOneChoice = new QuestionWithOneChoice();
         withOneChoice.setContent("Question0?");
@@ -47,6 +53,8 @@ public abstract class AppController implements IInitializable {
 
     public void createInputQuestions() {
         questions.clear();
+        questions.correctAnswerAmount = 0;
+        User.getINSTANCE().clearPoints();
         List<Question> temp = new ArrayList<>();
         QuestionWithInput withInput = new QuestionWithInput();
         withInput.setContent("Question0?");

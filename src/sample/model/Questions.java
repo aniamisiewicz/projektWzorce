@@ -6,6 +6,7 @@ import java.util.List;
 public class Questions {
 
     private List<Question> questionsList;
+    public int correctAnswerAmount = 0;
 
     public Questions() {
         questionsList = new ArrayList<>();
