@@ -2,7 +2,7 @@ package sample.model;
 
 import javafx.scene.control.Label;
 
-public abstract class Question implements IQuestion {
+public abstract class Question {
 
     private String content;
     public State state;
@@ -26,7 +26,7 @@ public abstract class Question implements IQuestion {
     }
 
     public boolean isCorrect(){
-        return userAnswer == correctAnswer;
+        return userAnswer.equals(correctAnswer);
     }
 
     public String getUserAnswer() {

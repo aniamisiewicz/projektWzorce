@@ -14,4 +14,9 @@ public class QuestionWithBonus extends QuestionDecorator {
     public int calculatePoints() {
         return super.calculatePoints() + 1;
     }
+
+    @Override
+    public Question clone() {
+        return new QuestionWithBonus(this);
+    }
 }
