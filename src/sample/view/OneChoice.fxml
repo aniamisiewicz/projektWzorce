@@ -7,10 +7,11 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.OneChoice">
    <children>
-      <GridPane layoutX="200.0" layoutY="177.0">
+      <GridPane layoutX="206.0" layoutY="127.0" prefHeight="103.0" prefWidth="261.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -20,15 +21,39 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <RadioButton id="answer0" fx:id="answer0" mnemonicParsing="false" text="RadioButton" />
-            <RadioButton id="answer1" fx:id="answer1" mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" />
-            <RadioButton id="answer2" fx:id="answer2" mnemonicParsing="false" text="RadioButton" GridPane.rowIndex="1" />
-            <RadioButton id="answer3" fx:id="answer3" mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <RadioButton id="answer0" fx:id="answer0" mnemonicParsing="false" text="RadioButton">
+               <font>
+                  <Font name="Mosk Medium 500" size="14.0" />
+               </font></RadioButton>
+            <RadioButton id="answer1" fx:id="answer1" mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></RadioButton>
+            <RadioButton id="answer2" fx:id="answer2" mnemonicParsing="false" text="RadioButton" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></RadioButton>
+            <RadioButton id="answer3" fx:id="answer3" mnemonicParsing="false" text="RadioButton" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font></RadioButton>
          </children>
       </GridPane>
-      <Label id="question" fx:id="question" layoutX="285.0" layoutY="84.0" text="Label" />
-      <Button fx:id="answer" layoutX="173.0" layoutY="299.0" mnemonicParsing="false" onAction="#answerQuestion" text="Answer" />
-      <Button fx:id="next" layoutX="373.0" layoutY="299.0" mnemonicParsing="false" onAction="#nextQuestion" text="Next" />
-      <Label fx:id="alert" layoutX="285.0" layoutY="351.0" />
+      <Label id="question" fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="123.0" layoutY="63.0" prefHeight="32.0" prefWidth="357.0" text="Label" textAlignment="CENTER" AnchorPane.leftAnchor="123.0" AnchorPane.rightAnchor="120.0">
+         <font>
+            <Font name="Mosk Bold 700" size="26.0" />
+         </font></Label>
+      <Button fx:id="answer" layoutX="190.0" layoutY="287.0" mnemonicParsing="false" onAction="#answerQuestion" text="Confirm">
+         <font>
+            <Font name="Mosk Medium 500" size="13.0" />
+         </font></Button>
+      <Button fx:id="next" layoutX="346.0" layoutY="287.0" mnemonicParsing="false" onAction="#nextQuestion" text="Next">
+         <font>
+            <Font name="Mosk Medium 500" size="13.0" />
+         </font></Button>
+      <Label fx:id="alert" alignment="CENTER" contentDisplay="CENTER" layoutX="137.0" layoutY="351.0" prefHeight="16.0" prefWidth="330.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="133.0">
+         <font>
+            <Font name="Mosk Light 300" size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>

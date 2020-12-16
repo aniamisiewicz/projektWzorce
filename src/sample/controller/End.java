@@ -21,7 +21,12 @@ public class End extends AppController{
     }
 
     public void displayScore(){
-        score.setText("You collected " + User.getINSTANCE().getScore() + " points!");
+        if(User.getINSTANCE().getScore() == 1){
+            score.setText("You collected " + User.getINSTANCE().getScore() + " point!");
+        }
+        else{
+            score.setText("You collected " + User.getINSTANCE().getScore() + " points!");
+        }
     }
 
     public void goToQuestionSummary(ActionEvent actionEvent){
