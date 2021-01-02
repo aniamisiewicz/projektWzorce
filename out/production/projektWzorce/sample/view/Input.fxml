@@ -4,14 +4,26 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.Input">
    <children>
-      <Label fx:id="question" layoutX="285.0" layoutY="124.0" text="Label" />
-      <TextField fx:id="inputField" layoutX="221.0" layoutY="173.0" />
-      <Button fx:id="answer" layoutX="165.0" layoutY="283.0" mnemonicParsing="false" onAction="#answerQuestion" text="Answer" />
-      <Button fx:id="next" layoutX="381.0" layoutY="283.0" mnemonicParsing="false" onAction="#nextQuestion" text="Next" />
-      <Label fx:id="alert" layoutX="286.0" layoutY="332.0" />
+      <Label fx:id="question" alignment="CENTER" contentDisplay="CENTER" layoutX="128.0" layoutY="84.0" prefHeight="32.0" prefWidth="345.0" text="Label">
+         <font>
+            <Font name="Mosk Bold 700" size="26.0" />
+         </font></Label>
+      <TextField fx:id="inputField" layoutX="163.0" layoutY="160.0" prefHeight="27.0" prefWidth="275.0" />
+      <Button fx:id="answer" layoutX="163.0" layoutY="258.0" mnemonicParsing="false" onAction="#answerQuestion" text="Confirm">
+         <font>
+            <Font name="Mosk Medium 500" size="13.0" />
+         </font></Button>
+      <Button fx:id="next" layoutX="393.0" layoutY="258.0" mnemonicParsing="false" onAction="#nextQuestion" text="Next">
+         <font>
+            <Font name="Mosk Medium 500" size="13.0" />
+         </font></Button>
+      <Label fx:id="alert" alignment="CENTER" contentDisplay="CENTER" layoutX="134.0" layoutY="339.0" prefHeight="16.0" prefWidth="334.0">
+         <font>
+            <Font name="Mosk Light 300" size="14.0" />
+         </font></Label>
    </children>
 </AnchorPane>
